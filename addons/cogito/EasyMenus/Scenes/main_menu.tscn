@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq6tvhqcy2aps"]
+[gd_scene load_steps=18 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Theme" uid="uid://by44nnjeu6u4n" path="res://addons/cogito/Theme/Cogito_Theme_A.tres" id="1_74dia"]
 [ext_resource type="Script" uid="uid://mp64lt5trfar" path="res://addons/cogito/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://c024i2xgr6uib" path="res://addons/cogito/EasyMenus/Scripts/main_menu_saveslot_manager.gd" id="13_4uenq"]
 [ext_resource type="AudioStream" uid="uid://6ihlxpw6pg3b" path="res://addons/cogito/Assets/Audio/sniffing-74536.mp3" id="14_1fm4n"]
 [ext_resource type="AudioStream" uid="uid://bgvqck0ksd4ia" path="res://addons/cogito/Assets/Audio/ghost-breathing-31526.mp3" id="15_raclh"]
+[ext_resource type="AudioStream" uid="uid://dhyd74oxs32dx" path="res://addons/cogito/Assets/Audio/calming-rain-257596.mp3" id="16_fs6vn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n66hi"]
 
@@ -185,20 +186,29 @@ new_game_world_dict = {
 script = ExtResource("9_kfsif")
 start_game_scene = "uid://cud7jwvomj24d"
 
-[node name="Screech" parent="." instance=ExtResource("12_72g5g")]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Breathing" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("15_raclh")
+volume_db = -19.675
+
+[node name="Screech" parent="Control" instance=ExtResource("12_72g5g")]
 volume_db = -5.982
 pitch_scale = 0.21
 autoplay = false
 
-[node name="Creepy Audio" type="AudioStreamPlayer" parent="."]
+[node name="Creepy Audio" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("13_2q4pv")
 
-[node name="Sniff" type="AudioStreamPlayer" parent="."]
+[node name="Sniff" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("14_1fm4n")
 
-[node name="Breathing" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_raclh")
-volume_db = -9.369
+[node name="Rain" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("16_fs6vn")
+volume_db = -13.118
 
 [connection signal="pressed" from="ContentMain/GameMenu/VBoxContainer/Play/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ContentMain/GameMenu/VBoxContainer/HBoxContainerA/DeleteSlot_A" to="ContentMain/GameMenu/VBoxContainer/HBoxContainerA/SaveSlot_A" method="_on_delete_slot_pressed"]

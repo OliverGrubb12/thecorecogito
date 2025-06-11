@@ -5,10 +5,11 @@ signal start_game_pressed
 @onready var game_menu: MarginContainer = $ContentMain/GameMenu
 @onready var options_tab_menu: OptionsTabMenu = $ContentMain/OptionsTabMenu
 @onready var options_button: CogitoUiButton = $ContentMain/GameMenu/VBoxContainer/OptionsButton
-@onready var screech: AudioStreamPlayer = $Screech
-@onready var creepy_audio: AudioStreamPlayer = $"Creepy Audio"
-@onready var sniff: AudioStreamPlayer = $Sniff
-@onready var breathing: AudioStreamPlayer = $Breathing
+@onready var screech: AudioStreamPlayer = $Control/Screech
+@onready var creepy_audio: AudioStreamPlayer = $"Control/Creepy Audio"
+@onready var sniff: AudioStreamPlayer = $Control/Sniff
+@onready var breathing: AudioStreamPlayer = $Control/Breathing
+@onready var rain: AudioStreamPlayer = $Control/Rain
 
 #region UI AUDIO
 @export var sound_hover : AudioStream
@@ -55,10 +56,11 @@ func _ready():
 	first_focus_button.grab_focus()
 	
 	for loop in 100:
+		rain.play()
 		screech.play()
 		await get_tree().create_timer(7.0).timeout
 		creepy_audio.play()
-		await get_tree().create_timer(50.0).timeout
+		await get_tree().create_timer(30.0).timeout
 		breathing.play()
 		sniff.play()
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwwk4v040wrqb"]
+
+[ext_resource type="PackedScene" uid="uid://bg67rxn6px4d2" path="res://addons/cogito/Assets/Models/game version enemy model.glb" id="1_7p1mj"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="game version enemy model" parent="." instance=ExtResource("1_7p1mj")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
