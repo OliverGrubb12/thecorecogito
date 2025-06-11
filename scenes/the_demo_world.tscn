@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://v2oxyxp07e0d"]
+
+[ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
+[ext_resource type="PackedScene" uid="uid://corr77k5qu3jp" path="res://addons/cogito/CogitoObjects/crystal.tscn" id="3_kk1bx"]
+[ext_resource type="PackedScene" uid="uid://bivmnglewxkd0" path="res://scenes/base_map.tscn" id="4_nf3v4"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wpnhy"]
+panorama = ExtResource("1_d404f")
+
+[sub_resource type="Sky" id="Sky_0jn4n"]
+sky_material = SubResource("PanoramaSkyMaterial_wpnhy")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_y5hvh"]
+background_mode = 2
+background_color = Color(0.447918, 0.775722, 1, 1)
+background_energy_multiplier = 0.2
+sky = SubResource("Sky_0jn4n")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.537246, 0.572091, 0.626846, 1)
+fog_light_energy = 0.34
+fog_sun_scatter = 0.05
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0051
+volumetric_fog_emission = Color(0.687215, 0.687215, 0.687215, 1)
+volumetric_fog_emission_energy = 5.0
+
+[node name="TheDemoWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y5hvh")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="CogitoPlayer" parent="." instance=ExtResource("2_nf3v4")]
+transform = Transform3D(1.77341, 0, 0, 0, 1.77341, 0, 0, 0, 1.77341, -0.312718, 3.0848, 0.548105)
+
+[node name="Crystal" parent="." instance=ExtResource("3_kk1bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30317, 0.525131, 2.23667)
+
+[node name="Crystal2" parent="." instance=ExtResource("3_kk1bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28682, 0.525129, 5.88288)
+
+[node name="Crystal3" parent="." instance=ExtResource("3_kk1bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984959, 0.52513, -13.6561)
+
+[node name="Base Map" parent="." instance=ExtResource("4_nf3v4")]

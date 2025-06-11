@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4enc3wslemro"]
+
+[ext_resource type="AudioStream" uid="uid://nx3j004ehjl" path="res://addons/cogito/Assets/Audio/screeching-sound-effect-312866.mp3" id="1_3q0fg"]
+
+[node name="Screech" type="AudioStreamPlayer"]
+stream = ExtResource("1_3q0fg")
+autoplay = true
