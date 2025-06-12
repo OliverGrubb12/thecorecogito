@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://kicjwmh02uwf"]
+[gd_scene load_steps=34 format=3 uid="uid://kicjwmh02uwf"]
 
 [ext_resource type="Script" uid="uid://dyitnpyhwiqx7" path="res://addons/cogito/CogitoObjects/cogito_player.gd" id="1_87we8"]
 [ext_resource type="Resource" uid="uid://ll11y3yjbqt" path="res://addons/cogito/InventoryPD/Inventories/PlayerInventory_FIXED.tres" id="2_iyhv4"]
@@ -35,6 +35,8 @@ size = Vector3(0.6, 1.7, 0.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ut3wm"]
 size = Vector3(0.6, 0.7, 0.6)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xg64i"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_af0lu"]
 streams_count = 5
@@ -100,6 +102,11 @@ target_position = Vector3(0, -0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
 target_position = Vector3(0, 1.6, 0)
 collision_mask = 3
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CapsuleShape3D_xg64i")
 
 [node name="Body" type="Node3D" parent="."]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=9 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
 [ext_resource type="PackedScene" uid="uid://corr77k5qu3jp" path="res://addons/cogito/CogitoObjects/crystal.tscn" id="3_kk1bx"]
 [ext_resource type="PackedScene" uid="uid://bivmnglewxkd0" path="res://scenes/base_map.tscn" id="4_nf3v4"]
+[ext_resource type="PackedScene" uid="uid://cwwk4v040wrqb" path="res://scenes/enemy.tscn" id="5_kk1bx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wpnhy"]
 panorama = ExtResource("1_d404f")
@@ -53,3 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28682, 0.525129, 5.88288)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984959, 0.52513, -13.6561)
 
 [node name="Base Map" parent="." instance=ExtResource("4_nf3v4")]
+
+[node name="Enemy" parent="." instance=ExtResource("5_kk1bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88157, 0.0065887, -0.0635867)
