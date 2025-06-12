@@ -57,3 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984959, 0.52513, -13.6561)
 
 [node name="Enemy" parent="." instance=ExtResource("5_kk1bx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88157, 0.0065887, -0.0635867)
+
+[connection signal="area_entered" from="CogitoPlayer/Hitbox" to="Enemy" method="_on_hitbox_area_entered"]
+
+[editable path="CogitoPlayer"]
+[editable path="Enemy"]

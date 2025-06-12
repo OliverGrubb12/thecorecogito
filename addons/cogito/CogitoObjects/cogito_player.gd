@@ -12,7 +12,26 @@ signal toggled_interface(is_showing_ui:bool)
 
 signal mouse_movement(relative_mouse_movement:Vector2)
 
+@export var player_health = 100
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Everything Below here is template code.
 #region Variables
 ## Reference to Pause menu node
 @export var pause_menu : NodePath

@@ -3,7 +3,7 @@ class_name CogitoHealthAttribute
 
 ## Emitted when health is reduced.
 signal damage_taken()
-## Emitted when health reaches zeor.
+## Emitted when health reaches zero.
 signal death()
 
 ## Amount of damage received per second if sanity is zero. Usually only used for Players.
