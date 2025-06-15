@@ -1,6 +1,5 @@
 extends Node3D
 @onready var hitbox: Area3D = $Hitbox
-@onready var cogito_player: CogitoPlayer = $"."
 @export var enemy_damage = 100
 @export var enemy_health = 100
 
