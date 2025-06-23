@@ -3269,7 +3269,7 @@ size = Vector3(9.25883, 4.5626, 14.1115)
 material = SubResource("FogMaterial_4avjx")
 
 [node name="Player" parent="." instance=ExtResource("3_mgle8")]
-transform = Transform3D(-1, 0, 7.45058e-07, 0, 1, 0, -7.45058e-07, 0, -1, 45.2527, 0.905039, -17.9321)
+transform = Transform3D(-1, 0, 7.45058e-07, 0, 1, 0, -7.45058e-07, 0, -1, 2.48663, 0.905039, -17.9321)
 inventory_data = SubResource("Resource_md63x")
 step_height_camera_lerp = 1.5
 

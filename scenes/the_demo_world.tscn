@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=13 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d6btv338nqmo" path="res://scenes/tree_1.tscn" id="6_ei44f"]
 [ext_resource type="PackedScene" uid="uid://c4dtwruxf4n8u" path="res://scenes/tree_2.tscn" id="7_2qjcw"]
 [ext_resource type="PackedScene" uid="uid://cffnp1r0ggwhx" path="res://scenes/reactor_core.tscn" id="8_svl00"]
+[ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://addons/cogito/PackedScenes/Pickups/pickup_flashlight.tscn" id="9_svl00"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wpnhy"]
 panorama = ExtResource("1_d404f")
@@ -47,7 +48,7 @@ environment = SubResource("Environment_y5hvh")
 [node name="Base Map" parent="Map" instance=ExtResource("4_nf3v4")]
 
 [node name="CogitoPlayer" parent="Map" instance=ExtResource("2_nf3v4")]
-transform = Transform3D(1.77341, 0, 0, 0, 1.77341, 0, 0, 0, 1.77341, -0.313, 1.58753, -43.929)
+transform = Transform3D(1.77341, 0, 0, 0, 1.77341, 0, 0, 0, 1.77341, 0, 1.588, -40)
 
 [node name="Player_HUD" parent="Map/CogitoPlayer" index="16"]
 metadata/_edit_use_anchors_ = true
@@ -1525,6 +1526,9 @@ transform = Transform3D(0.40393, 0, 0.914789, 0, 1, 0, -0.914789, 0, 0.40393, -8
 transform = Transform3D(0.40393, 0, 0.914789, 0, 1, 0, -0.914789, 0, 0.40393, -73.3529, 0, -157.508)
 
 [node name="Reactor Core" parent="Map" instance=ExtResource("8_svl00")]
+
+[node name="Pickup_Flashlight" parent="." instance=ExtResource("9_svl00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633618, -37)
 
 [connection signal="area_entered" from="Map/CogitoPlayer/Hitbox" to="Map/Enemy" method="_on_hitbox_area_entered"]
 

@@ -88,9 +88,6 @@ offset_bottom = -495.0
 [node name="AttributeBar" parent="FixedStaminaBar/HBoxContainer" index="1"]
 custom_minimum_size = Vector2(130, 5)
 
-[node name="AttributeLabel" parent="FixedStaminaBar/HBoxContainer" index="2"]
-visible = false
-
 [node name="DamageOverlay" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -151,7 +148,6 @@ theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer_BottomUI" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -245,7 +241,6 @@ size_flags_vertical = 8
 alignment = 1
 
 [node name="InventoryInterface" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,7 +264,6 @@ offset_bottom = 31.0
 grow_vertical = 2
 
 [node name="PlayerCurrencies" type="PanelContainer" parent="InventoryInterface/VBoxContainer"]
-visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -292,12 +286,10 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="InventoryUI" parent="InventoryInterface/VBoxContainer" instance=ExtResource("3_krf2d")]
-visible = false
 layout_mode = 2
 inventory_name = "Player Inventory"
 
 [node name="ExternalInventoryUI" parent="InventoryInterface" instance=ExtResource("3_krf2d")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -312,7 +304,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("5_juyvt")]
-visible = false
 modulate = Color(1, 1, 1, 0.498039)
 self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
@@ -320,7 +311,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="HotBarInventory" parent="InventoryInterface" instance=ExtResource("6_8odro")]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -438,7 +428,6 @@ layout_mode = 2
 text = "Drop"
 
 [node name="HBoxAssign" type="HBoxContainer" parent="InventoryInterface/InfoPanel/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
@@ -461,7 +450,6 @@ layout_mode = 2
 text = "Assign Quickslot"
 
 [node name="QuickSlots" type="Control" parent="InventoryInterface" node_paths=PackedStringArray("quickslot_containers")]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -475,7 +463,6 @@ script = ExtResource("20_xe82q")
 quickslot_containers = [NodePath("CogitoQuickslotContainer1"), NodePath("CogitoQuickslotContainer2"), NodePath("CogitoQuickslotContainer3"), NodePath("CogitoQuickslotContainer4")]
 
 [node name="CogitoQuickslotContainer1" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
-visible = false
 layout_mode = 0
 offset_top = -16.0
 offset_bottom = 48.0
@@ -488,8 +475,10 @@ focus_mode = 2
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer1/MarginContainerInputIcon" index="0"]
 position = Vector2(59, 32)
 
+[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer1" index="2"]
+visible = true
+
 [node name="CogitoQuickslotContainer2" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
-visible = false
 layout_mode = 0
 offset_left = 50.0
 offset_top = -68.0
@@ -503,7 +492,6 @@ focus_mode = 2
 input_action = "quickslot_2"
 
 [node name="CogitoQuickslotContainer3" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
-visible = false
 layout_mode = 0
 offset_left = 100.0
 offset_top = -16.0
@@ -518,6 +506,9 @@ input_action = "quickslot_3"
 
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer3/MarginContainerInputIcon" index="0"]
 position = Vector2(0, 32)
+
+[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer3" index="2"]
+visible = true
 
 [node name="CogitoQuickslotContainer4" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
 layout_mode = 0
@@ -535,6 +526,9 @@ input_action = "quickslot_4"
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer4/MarginContainerInputIcon" index="0"]
 position = Vector2(32, 0)
 
+[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer4" index="2"]
+visible = true
+
 [node name="DeathScreen" parent="." instance=ExtResource("23_4avie")]
 layout_mode = 1
 
@@ -544,7 +538,6 @@ offset_bottom = 5.0
 theme = ExtResource("5_j6s1a")
 
 [node name="QuestHUD" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 anchor_left = 0.683594
 anchor_top = 0.0138889
@@ -581,9 +574,10 @@ vertical_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="QuestHUD/QuestDisplay/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_j6s1a")
-current_tab = 0
+current_tab = 1
 
 [node name="Active" type="VBoxContainer" parent="QuestHUD/QuestDisplay/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("5_j6s1a")
 theme_override_constants/separation = 4
@@ -596,7 +590,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Completed" type="VBoxContainer" parent="QuestHUD/QuestDisplay/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

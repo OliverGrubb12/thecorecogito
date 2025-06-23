@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://corr77k5qu3jp"]
+[gd_scene load_steps=8 format=4 uid="uid://corr77k5qu3jp"]
 
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_7e0b3"]
+[ext_resource type="AudioStream" uid="uid://dlx7sekb5qcxf" path="res://addons/cogito/Assets/Audio/crystal-sound-effect-47917.mp3" id="3_7e0b3"]
 [ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="3_waf8q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fni0"]
@@ -63,3 +64,7 @@ shape = SubResource("ConvexPolygonShape3D_lcx1q")
 
 [node name="CarryableComponent" parent="." instance=ExtResource("3_waf8q")]
 interaction_text = "Pick Up"
+
+[node name="Crystal Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_7e0b3")
+autoplay = true

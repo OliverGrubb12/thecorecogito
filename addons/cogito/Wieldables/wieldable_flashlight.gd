@@ -5,7 +5,7 @@ extends CogitoWieldable
 ## Sets if the flashlight is turned on or off on ready()
 @export var is_on: bool
 ## How much the energy depletes per second
-@export var drain_rate: float = 1
+@export var drain_rate: float = 0
 ## Cooldown time between toggles
 @export var toggle_cooldown: float = 0.5
 ## Delay before registering button press
@@ -29,7 +29,7 @@ extends CogitoWieldable
 # Internal variables
 var is_action_pressed: bool = false
 var can_toggle: bool = true  # If the flashlight can be toggled
-var cooldown_timer: float = 0.0
+var cooldown_timer: float = 1
 
 func _ready():
 	# Hide the wieldable mesh if it exists
