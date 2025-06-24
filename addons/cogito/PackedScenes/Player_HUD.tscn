@@ -161,6 +161,7 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="WieldableHud" type="PanelContainer" parent="MarginContainer_BottomUI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 2
@@ -264,6 +265,7 @@ offset_bottom = 31.0
 grow_vertical = 2
 
 [node name="PlayerCurrencies" type="PanelContainer" parent="InventoryInterface/VBoxContainer"]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -290,6 +292,7 @@ layout_mode = 2
 inventory_name = "Player Inventory"
 
 [node name="ExternalInventoryUI" parent="InventoryInterface" instance=ExtResource("3_krf2d")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -304,6 +307,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("5_juyvt")]
+visible = false
 modulate = Color(1, 1, 1, 0.498039)
 self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
@@ -311,6 +315,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="HotBarInventory" parent="InventoryInterface" instance=ExtResource("6_8odro")]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -324,6 +329,7 @@ theme = ExtResource("5_j6s1a")
 theme_type_variation = &"HUDPanel"
 
 [node name="InfoPanel" type="PanelContainer" parent="InventoryInterface"]
+visible = false
 custom_minimum_size = Vector2(200, 10)
 layout_mode = 0
 offset_right = 200.0
@@ -362,6 +368,7 @@ text = "Item description going over to lines. Testing overflow as well to make s
 autowrap_mode = 3
 
 [node name="HBoxUse" type="HBoxContainer" parent="InventoryInterface/InfoPanel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
@@ -384,6 +391,7 @@ layout_mode = 2
 text = "Use"
 
 [node name="HBoxMove" type="HBoxContainer" parent="InventoryInterface/InfoPanel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
@@ -406,6 +414,7 @@ layout_mode = 2
 text = "Move"
 
 [node name="HBoxDrop" type="HBoxContainer" parent="InventoryInterface/InfoPanel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
@@ -428,6 +437,7 @@ layout_mode = 2
 text = "Drop"
 
 [node name="HBoxAssign" type="HBoxContainer" parent="InventoryInterface/InfoPanel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
@@ -475,9 +485,6 @@ focus_mode = 2
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer1/MarginContainerInputIcon" index="0"]
 position = Vector2(59, 32)
 
-[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer1" index="2"]
-visible = true
-
 [node name="CogitoQuickslotContainer2" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
 layout_mode = 0
 offset_left = 50.0
@@ -507,9 +514,6 @@ input_action = "quickslot_3"
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer3/MarginContainerInputIcon" index="0"]
 position = Vector2(0, 32)
 
-[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer3" index="2"]
-visible = true
-
 [node name="CogitoQuickslotContainer4" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
 layout_mode = 0
 offset_left = 50.0
@@ -525,9 +529,6 @@ input_action = "quickslot_4"
 
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer4/MarginContainerInputIcon" index="0"]
 position = Vector2(32, 0)
-
-[node name="Selected" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer4" index="2"]
-visible = true
 
 [node name="DeathScreen" parent="." instance=ExtResource("23_4avie")]
 layout_mode = 1

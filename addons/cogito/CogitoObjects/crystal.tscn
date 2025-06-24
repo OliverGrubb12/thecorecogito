@@ -67,4 +67,3 @@ interaction_text = "Pick Up"
 
 [node name="Crystal Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_7e0b3")
-autoplay = true

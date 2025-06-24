@@ -59,7 +59,7 @@ func open_inventory():
 		info_panel.hide()
 		get_viewport().gui_focus_changed.connect(_on_focus_changed)
 		inventory_ui.show()
-		player_currencies_ui.show()
+		#player_currencies_ui.show()
 		if InputHelper.device_index != -1: # Check if gamepad is used
 			inventory_ui.slot_array[0].grab_focus() # Grab focus of inventory slot for gamepad users.
 #		inventory_interface.grabbed_slot_node.show()
