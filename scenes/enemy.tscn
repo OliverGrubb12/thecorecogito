@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwwk4v040wrqb"]
+[gd_scene load_steps=10 format=3 uid="uid://cwwk4v040wrqb"]
 
-[ext_resource type="PackedScene" uid="uid://bg67rxn6px4d2" path="res://addons/cogito/Assets/Models/game version enemy model.glb" id="1_7p1mj"]
+[ext_resource type="PackedScene" path="res://addons/cogito/Assets/Models/game version enemy model.glb" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://b2v8hfg3nh5uq" path="res://scenes/character_body_3d.gd" id="2_4ra3w"]
 [ext_resource type="AudioStream" uid="uid://co6qj7hk11h70" path="res://addons/cogito/Assets/Audio/horror-background-tension-254885.mp3" id="3_4ra3w"]
+[ext_resource type="PackedScene" uid="uid://gkhq8ybs2rta" path="res://addons/cogito/Assets/Models/Enemy model.glb" id="4_c4w8v"]
+[ext_resource type="PackedScene" uid="uid://cnehpfoum2g7" path="res://addons/cogito/Assets/Models/game version enemy model.blend" id="5_xwavj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5uy6h"]
 height = 3.3183
@@ -52,3 +54,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8354, 2.69165, -0.120361)
 shape = SubResource("BoxShape3D_xwavj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Human Enemy" index="5"]
+
+[node name="Enemy model" parent="." index="3" instance=ExtResource("4_c4w8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597191, 2.38419e-07, -3.3843)
+
+[node name="Enemy model2" parent="." index="4" instance=ExtResource("4_c4w8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68662, 0, -4.88754)
+
+[node name="game version enemy model" parent="." index="5" instance=ExtResource("5_xwavj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.926332, -2.38419e-07, -6.25326)

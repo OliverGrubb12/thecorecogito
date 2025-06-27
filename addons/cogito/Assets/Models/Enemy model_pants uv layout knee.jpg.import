@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b4pst8qq4fssl"
+path.s3tc="res://.godot/imported/Enemy model_pants uv layout knee.jpg-76aea7981d1ab5d9679a5128b95ff17e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "046e1f41389bf866c9c0990dc6fbcd23"
+}
+
+[deps]
+
+source_file="res://addons/cogito/Assets/Models/Enemy model_pants uv layout knee.jpg"
+dest_files=["res://.godot/imported/Enemy model_pants uv layout knee.jpg-76aea7981d1ab5d9679a5128b95ff17e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://addons/cogito/Assets/Models/Enemy model_pants uv layout knee.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

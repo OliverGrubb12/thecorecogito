@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=14 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
@@ -38,6 +38,11 @@ volumetric_fog_density = 0.0051
 volumetric_fog_emission = Color(0.687215, 0.687215, 0.687215, 1)
 volumetric_fog_emission_energy = 5.0
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_svl00"]
+geometry_parsed_geometry_type = 1
+agent_height = 5.0
+agent_radius = 3.0
+
 [node name="TheDemoWorld" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -58,10 +63,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" parent="Map" instance=ExtResource("5_kk1bx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.934, 0.0065887, -0.0635867)
-
-[node name="Ambience" parent="Map/Enemy/CharacterBody3D" index="2"]
-transform = Transform3D(20, 0, 0, 0, 5.14, 0, 0, 0, 5.14, 0, 1.95456, 0)
-volume_db = -18.261
 
 [node name="Crystals" type="Node3D" parent="Map"]
 
@@ -1527,10 +1528,13 @@ transform = Transform3D(0.40393, 0, 0.914789, 0, 1, 0, -0.914789, 0, 0.40393, -7
 
 [node name="Reactor Core" parent="Map" instance=ExtResource("8_svl00")]
 
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]
+navigation_mesh = SubResource("NavigationMesh_svl00")
+
 [node name="Pickup_Flashlight" parent="." instance=ExtResource("9_svl00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633618, -37)
 
-[connection signal="area_entered" from="Map/CogitoPlayer/Hitbox" to="Map/Enemy" method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Map/Enemy/Human Enemy/Detector" to="Map/Enemy/Human Enemy" method="_on_detector_body_entered"]
 
 [editable path="Map/CogitoPlayer"]
 [editable path="Map/Enemy"]

@@ -28,7 +28,7 @@ func _process(delta):
 		speed = walkingSpeed
 		wandering(delta)
 	
-	var direction = nav.get_next_path_position().global_position
+	var direction = nav.get_next_path_position()-global_position
 	direction = direction.normalized()
 	
 	velocity = velocity.lerp(direction * speed, delta * 10)
@@ -51,3 +51,13 @@ func wandering(delta):
 		clamp(randomPos.z, -85, 20)
 		wanderTimer = 60
 	wanderTimer -=delta
+
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		isChasing = true
+	
+
+
+func _on_detector_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

@@ -1305,3 +1305,7 @@ func _on_player_state_loaded():
 	#self.global_transform.basis = Basis()
 	#neck.global_transform.basis = Basis()
 	pass
+
+
+func _on_detector_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
