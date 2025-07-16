@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=13 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
 [ext_resource type="PackedScene" uid="uid://corr77k5qu3jp" path="res://addons/cogito/CogitoObjects/crystal.tscn" id="3_kk1bx"]
 [ext_resource type="PackedScene" uid="uid://bivmnglewxkd0" path="res://scenes/base_map.tscn" id="4_nf3v4"]
 [ext_resource type="PackedScene" uid="uid://cxem4lc0iyno2" path="res://scenes/enemy_model.tscn" id="7_ei44f"]
+[ext_resource type="PackedScene" uid="uid://cgy7gvt5lw815" path="res://scenes/tree_1_demo.tscn" id="8_2qjcw"]
 [ext_resource type="PackedScene" uid="uid://cffnp1r0ggwhx" path="res://scenes/reactor_core.tscn" id="8_svl00"]
 [ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://addons/cogito/PackedScenes/Pickups/pickup_flashlight.tscn" id="9_svl00"]
 
@@ -71,6 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7924, 0.525129, 18.6526)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9257, 0.52513, -13.6561)
 
 [node name="Reactor Core" parent="Map" instance=ExtResource("8_svl00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41025, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]
 navigation_mesh = SubResource("NavigationMesh_svl00")
@@ -81,5 +83,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633618, -37)
 [node name="Enemy!!!" parent="." instance=ExtResource("7_ei44f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.379, 0, 0)
 speed = 2.5
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree1Demo" parent="Trees" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1987, -9.53674e-07, 4.66381)
+
+[node name="Tree1Demo2" parent="Trees" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -38.2708, 9.53674e-07, -3.96)
 
 [editable path="Map/CogitoPlayer"]
