@@ -60,6 +60,15 @@ metadata/_edit_use_anchors_ = true
 [node name="PauseMenu" parent="Map/CogitoPlayer" index="17"]
 metadata/_edit_use_anchors_ = true
 
+[node name="Enemy!!!" parent="Map/CogitoPlayer" instance=ExtResource("7_ei44f")]
+transform = Transform3D(0.563885, 0, 0, 0, 0.563885, 0, 0, 0, 0.563885, -2.72847, -0.891733, 66.7819)
+
+[node name="Enemy!!!2" parent="Map/CogitoPlayer" instance=ExtResource("7_ei44f")]
+transform = Transform3D(0.563885, 0, 0, 0, 0.563885, 0, 0, 0, 0.563885, 26.6717, -0.891731, 9.50414)
+
+[node name="Enemy!!!3" parent="Map/CogitoPlayer" instance=ExtResource("7_ei44f")]
+transform = Transform3D(0.563885, 0, 0, 0, 0.563885, 0, 0, 0, 0.563885, -18.5949, -0.891735, -72.8066)
+
 [node name="Crystals" type="Node3D" parent="Map"]
 
 [node name="Crystal" parent="Map/Crystals" instance=ExtResource("3_kk1bx")]
@@ -89,7 +98,28 @@ speed = 2.5
 [node name="Tree1Demo" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1987, -9.53674e-07, 4.66381)
 
+[node name="Tree1Demo" parent="Trees/Tree1Demo" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4701, -9.53674e-07, 7.26052)
+
 [node name="Tree1Demo2" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -38.2708, 9.53674e-07, -3.96)
 
+[node name="Tree1Demo" parent="Trees/Tree1Demo2" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75446, -9.53674e-07, 4.66381)
+
+[node name="Tree1Demo2" parent="Trees/Tree1Demo2" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -9.82655, 9.53674e-07, -3.96)
+
+[node name="Tree1Demo" parent="Trees/Tree1Demo2/Tree1Demo2" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75446, -9.53674e-07, 4.66381)
+
+[node name="Tree1Demo2" parent="Trees/Tree1Demo2/Tree1Demo2" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -9.82655, 9.53674e-07, -3.96)
+
+[node name="Tree1Demo2" parent="Trees/Tree1Demo2/Tree1Demo2/Tree1Demo2" instance=ExtResource("8_2qjcw")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 11.5603, 9.53674e-07, -3.96)
+
+[connection signal="body_entered" from="Enemy!!!/Hitbox" to="Map/CogitoPlayer" method="_on_hitbox_body_entered"]
+
 [editable path="Map/CogitoPlayer"]
+[editable path="Enemy!!!"]

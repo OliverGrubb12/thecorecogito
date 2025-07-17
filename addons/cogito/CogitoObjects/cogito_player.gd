@@ -102,7 +102,7 @@ var LandingVolume: float = 0.8
 @export var disable_roll_anim : bool = false
 @export var CAN_BUNNYHOP : bool = true
 @export var BUNNY_HOP_ACCELERATION : float = 0.1
-@export var INVERT_Y_AXIS : bool = true
+@export var INVERT_Y_AXIS : bool = false
 ## Controled by the game config. If false, player has to hold the crouch key to stay crouched.
 @export var TOGGLE_CROUCH : bool = false
 ## How much strength the player has to push RigidBody3D objects.
@@ -1305,7 +1305,3 @@ func _on_player_state_loaded():
 	#self.global_transform.basis = Basis()
 	#neck.global_transform.basis = Basis()
 	pass
-
-
-func _on_detector_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
