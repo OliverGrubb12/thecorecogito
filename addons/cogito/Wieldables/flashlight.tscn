@@ -47,6 +47,7 @@ roughness = 0.15
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0btuw"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 12.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xuu8r"]
 top_radius = 0.1
@@ -127,7 +128,7 @@ height = 0.1
 material = SubResource("StandardMaterial3D_lbp4w")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Flashlight_Mesh"]
-transform = Transform3D(-4.47035e-08, 1, 0, -1, -4.47035e-08, 0, 0, 2.84217e-14, 1, 0.196543, 0, -2.98023e-08)
+transform = Transform3D(-4.47035e-08, 1, 0, -1, -4.47035e-08, 0, 0, 0, 1, 0.194965, -0.00187829, 0.00146621)
 radius = 0.05
 height = 0.01
 material = SubResource("StandardMaterial3D_0btuw")
