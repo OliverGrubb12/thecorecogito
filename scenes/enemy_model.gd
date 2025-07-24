@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var rotation_speed: float = 5.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var detection_area: Area3D = $"Detection Area"
+#@onready var enemy_model = $EnemyMesh
+#@onready var animator = $EnemyMesh/AnimationPlayer
 
 var origin_position: Vector3
 var target_position: Vector3

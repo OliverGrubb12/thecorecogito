@@ -119,7 +119,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -9.82655, 9.53674e-0
 [node name="Tree1Demo2" parent="Trees/Tree1Demo2/Tree1Demo2/Tree1Demo2" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 11.5603, 9.53674e-07, -3.96)
 
-[connection signal="body_entered" from="Enemy!!!/Hitbox" to="Map/CogitoPlayer" method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Enemy!!!/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
 
 [editable path="Map/CogitoPlayer"]
 [editable path="Enemy!!!"]

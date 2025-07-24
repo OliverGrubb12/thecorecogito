@@ -104,6 +104,7 @@ target_position = Vector3(0, 1.6, 0)
 collision_mask = 3
 
 [node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1.705, 0, 0, 0, 1.705, 0, 0, 0, 1.705, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("CapsuleShape3D_xg64i")
@@ -172,6 +173,8 @@ player = NodePath("..")
 [node name="AutoPickUpZone" parent="." node_paths=PackedStringArray("_player_interaction_component") instance=ExtResource("24_810bw")]
 auto_pick_up_items = Array[ExtResource("25_syofm")]([ExtResource("26_tndpm"), ExtResource("27_8coi0")])
 _player_interaction_component = NodePath("../PlayerInteractionComponent")
+
+[node name="Death Scream" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="mouse_movement" from="." to="Body/Neck/Head/Wieldables" method="sway"]
 [connection signal="player_state_loaded" from="." to="." method="_on_player_state_loaded"]
