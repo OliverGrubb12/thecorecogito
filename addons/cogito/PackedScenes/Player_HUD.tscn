@@ -27,6 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://dygtu0wos4337" path="res://addons/cogito/PackedScenes/death_screen.tscn" id="23_4avie"]
 [ext_resource type="Texture2D" uid="uid://chaocebolelc3" path="res://addons/DemoWorldAssets/jumpscare demo for ollie.png" id="26_3jei3"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3jei3"]
+font_size = 70
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x37p"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 1, 1)
@@ -47,9 +50,6 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.784314)
 
-[sub_resource type="LabelSettings" id="LabelSettings_3jei3"]
-font_size = 70
-
 [node name="Player_HUD" type="Control" node_paths=PackedStringArray("fixed_stamina_bar")]
 layout_mode = 3
 anchors_preset = 15
@@ -65,6 +65,46 @@ hint_component = ExtResource("17_bidre")
 ui_attribute_prefab = ExtResource("20_lscav")
 ui_currency_prefab = ExtResource("6_kmqyf")
 fixed_stamina_bar = NodePath("FixedStaminaBar")
+
+[node name="Jumpscare Demo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Jumpscare Demo"]
+
+[node name="Jumpscare Image" type="TextureRect" parent="Jumpscare Demo/CanvasLayer"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.67, 0.67)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("26_3jei3")
+
+[node name="Label" type="Label" parent="Jumpscare Demo/CanvasLayer/Jumpscare Image"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0652985
+anchor_top = 0.109301
+anchor_right = 0.323423
+anchor_bottom = 0.35693
+offset_top = -27.0
+offset_right = -0.599854
+offset_bottom = -0.439941
+text = "Your body was
+never found...
+"
+label_settings = SubResource("LabelSettings_3jei3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FixedStaminaBar" parent="." instance=ExtResource("20_lscav")]
 layout_mode = 1
@@ -223,6 +263,7 @@ text = "00"
 label_settings = SubResource("LabelSettings_ossw8")
 
 [node name="PlayerAttributes" type="PanelContainer" parent="MarginContainer_BottomUI"]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -601,45 +642,6 @@ metadata/_tab_index = 1
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
-
-[node name="Jumpscare Demo" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 5.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Jumpscare Demo"]
-
-[node name="Jumpscare Image" type="TextureRect" parent="Jumpscare Demo/CanvasLayer"]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.67, 0.67)
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture = ExtResource("26_3jei3")
-
-[node name="Label" type="Label" parent="Jumpscare Demo/CanvasLayer/Jumpscare Image"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0652985
-anchor_top = 0.109301
-anchor_right = 0.323423
-anchor_bottom = 0.35693
-offset_top = -27.0
-offset_right = -0.599854
-offset_bottom = -0.439941
-text = "Your body was
-never found...
-"
-label_settings = SubResource("LabelSettings_3jei3")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="HintTimer" to="." method="_on_hint_timer_timeout"]
 [connection signal="drop_slot_data" from="InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]

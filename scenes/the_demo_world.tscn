@@ -17,25 +17,33 @@ sky_material = SubResource("PanoramaSkyMaterial_wpnhy")
 radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_y5hvh"]
-background_mode = 2
-background_color = Color(0.447918, 0.775722, 1, 1)
-background_energy_multiplier = 0.2
+background_mode = 1
+background_color = Color(0.179914, 0.231252, 0.141883, 1)
+background_energy_multiplier = 1.03
 sky = SubResource("Sky_0jn4n")
 ambient_light_source = 3
+ambient_light_energy = 13.69
 reflected_light_source = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
+fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.537246, 0.572091, 0.626846, 1)
-fog_light_energy = 0.34
-fog_sun_scatter = 0.05
-fog_density = 1.0
+fog_light_color = Color(0.670845, 0.54632, 0.374722, 1)
+fog_light_energy = 0.12
+fog_density = 0.869
+fog_height = 1.0
+fog_height_density = 1.3241
+fog_depth_begin = 0.0
+fog_depth_end = 92.8
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0051
-volumetric_fog_emission = Color(0.687215, 0.687215, 0.687215, 1)
-volumetric_fog_emission_energy = 5.0
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.528109, 0.423292, 0.28305, 1)
+volumetric_fog_emission = Color(0.260185, 0.195559, 0.117879, 1)
+volumetric_fog_gi_inject = 5.28
+volumetric_fog_length = 240.55
+volumetric_fog_ambient_inject = 0.01
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_svl00"]
 geometry_parsed_geometry_type = 1
@@ -117,7 +125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41025, 0)
 navigation_mesh = SubResource("NavigationMesh_svl00")
 
 [node name="Pickup_Flashlight" parent="." instance=ExtResource("9_svl00")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.208626, 180.246)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.208626, 180.694)
 
 [node name="Trees" type="Node3D" parent="."]
 
