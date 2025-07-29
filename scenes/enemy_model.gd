@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
-@export var speed: float = 3.0
+@export var speed: float = 4
 @export var wander_radius: float = 50.0
 @export var rotation_speed: float = 5.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var detection_area: Area3D = $"Detection Area"
+@onready var animation_player: AnimationPlayer = $Enemy2/AnimationPlayer
 #@onready var enemy_model = $EnemyMesh
 #@onready var animator = $EnemyMesh/AnimationPlayer
 
@@ -32,6 +33,7 @@ func _physics_process(delta):
 	if is_chasing and player and player.is_inside_tree():
 		# Chase player on XZ plane only
 		target_position = Vector3(player.global_position.x, global_position.y, player.global_position.z)
+		animation_player.play("Local/running")
 		current_speed = speed * 2  # Double speed when chasing
 	else:
 		# Wander behavior: if close to target, pick a new random target
@@ -39,6 +41,7 @@ func _physics_process(delta):
 		var horizontal_target = Vector3(target_position.x, 0, target_position.z)
 		if horizontal_pos.distance_to(horizontal_target) < 1.0:
 			_set_random_target()
+		animation_player.play("Local/walk")
 
 	var direction = target_position - global_position
 	direction.y = 0  # Lock Y for horizontal movement
