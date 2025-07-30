@@ -8,6 +8,7 @@ signal object_exits_tree()
 @export var cogito_name : String = self.name
 ## Name that will displayed when interacting. Leave blank to hide
 @export var display_name : String
+@onready var crystal: CogitoObject = $"."
 
 var interaction_nodes : Array[Node]
 var cogito_properties : CogitoProperties = null
@@ -90,3 +91,8 @@ func _on_body_exited(body: Node) -> void:
 
 func _exit_tree() -> void:
 	object_exits_tree.emit()
+
+
+func _on_deposit_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Crytsal"):
+		crystal.queue_free()

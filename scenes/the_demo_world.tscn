@@ -68,35 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.379, 1.19209e-07, -3.8147
 speed = 5.0
 
 [node name="Enemy!!!2" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6127, 1.19209e-07, -73.1063)
-speed = 5.0
-
-[node name="Enemy!!!3" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.379, 1.19209e-07, -144.041)
-speed = 5.0
-
-[node name="Enemy!!!4" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3889, 1.19209e-07, -74.5037)
-speed = 5.0
-
-[node name="Enemy!!!5" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.14, 1.19209e-07, 0.24477)
-speed = 5.0
-
-[node name="Enemy!!!6" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.413, 1.19209e-07, -3.8147e-06)
-speed = 5.0
-
-[node name="Enemy!!!7" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.3835, 1.19209e-07, 57.1077)
-speed = 5.0
-
-[node name="Enemy!!!8" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76478, -1.51396e-05, 56.2911)
-speed = 5.0
-
-[node name="Enemy!!!9" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0735, 1.19209e-07, 54.0095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5248, 1.19209e-07, 124.126)
 speed = 5.0
 
 [node name="CogitoPlayer" parent="Map" instance=ExtResource("2_nf3v4")]
@@ -112,12 +84,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Crystal" parent="Map/Crystals" instance=ExtResource("3_kk1bx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8162, 0.942132, 14.4922)
-
-[node name="Crystal2" parent="Map/Crystals" instance=ExtResource("3_kk1bx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7924, 0.525129, 18.6526)
-
-[node name="Crystal3" parent="Map/Crystals" instance=ExtResource("3_kk1bx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9257, 0.52513, -13.6561)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]
 navigation_mesh = SubResource("NavigationMesh_svl00")
@@ -208,24 +174,15 @@ transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 24.5241, 0, 88.9408)
 [node name="Tree1Demo25" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -18.5086, 0, 77.9972)
 
+[connection signal="body_entered" from="Map/Enemies/Enemy!!!/Detection Area" to="Map/CogitoPlayer" method="_on_detection_area_body_entered"]
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="Map/Enemies/Enemy!!!2/Detection Area" to="Map/CogitoPlayer" method="_on_detection_area_body_entered"]
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!2/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!3/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!4/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!5/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!6/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!7/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!8/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
-[connection signal="body_entered" from="Map/Enemies/Enemy!!!9/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="Map/Deposit Box/core bin/Cube_001/Deposit Area" to="Map/Crystals/Crystal" method="_on_deposit_area_body_entered"]
 
 [editable path="Map/Enemies/Enemy!!!"]
 [editable path="Map/Enemies/Enemy!!!2"]
-[editable path="Map/Enemies/Enemy!!!3"]
-[editable path="Map/Enemies/Enemy!!!4"]
-[editable path="Map/Enemies/Enemy!!!5"]
-[editable path="Map/Enemies/Enemy!!!6"]
-[editable path="Map/Enemies/Enemy!!!7"]
-[editable path="Map/Enemies/Enemy!!!8"]
-[editable path="Map/Enemies/Enemy!!!9"]
 [editable path="Map/CogitoPlayer"]
+[editable path="Map/Crystals/Crystal"]
+[editable path="Map/Deposit Box"]
 [editable path="Pickup_Flashlight"]

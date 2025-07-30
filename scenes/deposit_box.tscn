@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://db8aabndkdi8l"]
+[gd_scene load_steps=11 format=4 uid="uid://db8aabndkdi8l"]
+
+[ext_resource type="Script" uid="uid://ceo1my4ajtnl4" path="res://scenes/deposit_box.gd" id="1_n7irl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jgww"]
 resource_name = "Material"
@@ -82,6 +84,7 @@ data = PackedVector3Array(-1.1039, -1.1039, 1.1039, -1.1273, 1, -1.1273, -1.1273
 size = Vector3(3.88336, 2.51306, 2.93054)
 
 [node name="Deposit Box" type="Node3D"]
+script = ExtResource("1_n7irl")
 
 [node name="core bin" type="Node3D" parent="."]
 

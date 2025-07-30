@@ -80,3 +80,4 @@ func _on_body_exited(body):
 		player = null
 		is_chasing = false
 		_set_random_target()
+		

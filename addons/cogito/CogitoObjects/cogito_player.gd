@@ -17,6 +17,8 @@ signal mouse_movement(relative_mouse_movement:Vector2)
 @export var jumpscare_duration: float = 3
 @onready var jumpscare_image = $"Player_HUD/Jumpscare Demo/CanvasLayer/Jumpscare Image"
 @onready var death_scream: AudioStreamPlayer3D = $"Death Scream"
+@onready var chasing_scream: AudioStreamPlayer3D = $"Chasing Scream"
+
 
 
 
@@ -1322,4 +1324,10 @@ func show_jumpscare():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://addons/cogito/EasyMenus/Scenes/main_menu.tscn")
 	#queue_free()  # Remove area to avoid retriggering
+	
+
+
+func _on_detection_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		chasing_scream.play()
 	
