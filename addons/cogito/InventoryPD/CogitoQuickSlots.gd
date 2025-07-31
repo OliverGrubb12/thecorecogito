@@ -51,6 +51,14 @@ func bind_to_quickslot(itemslot_to_bind: InventorySlotPD, quickslot_to_bind: Cog
 	var slot_index : int = quickslot_containers.find(quickslot_to_bind, 0)
 	
 	if slot_index != -1:
+		# Check if this item is already assigned to another quickslot and remove it
+		for i in inventory_reference.assigned_quickslots.size():
+			if inventory_reference.assigned_quickslots[i] == itemslot_to_bind and i != slot_index:
+				inventory_reference.assigned_quickslots[i] = null
+				quickslot_containers[i].update_quickslot_data(null)
+				CogitoGlobals.debug_log(true, "CogitoQuickSlots.gd", "Removed item from previous quickslot " + str(i))
+				break
+		
 		inventory_reference.assigned_quickslots[slot_index] = itemslot_to_bind
 		quickslot_to_bind.update_quickslot_data(itemslot_to_bind)
 		CogitoGlobals.debug_log(true, "CogitoQuickSlots.gd", "Assigned quickslot " + str(slot_index) + " to " + itemslot_to_bind.inventory_item.name )
