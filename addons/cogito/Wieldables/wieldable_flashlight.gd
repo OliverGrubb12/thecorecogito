@@ -43,8 +43,8 @@ func _process(delta):
 	if is_on:
 		# Drain battery when flashlight is on
 		player_interaction_component.equipped_wieldable_item.subtract(delta * drain_rate)
-		#if player_interaction_component.equipped_wieldable_item.charge_current == 0:
-			#turn_off()
+		if player_interaction_component.equipped_wieldable_item.charge_current == 0:
+			turn_off()
 	
 	# Handle toggle cooldown
 	if not can_toggle:

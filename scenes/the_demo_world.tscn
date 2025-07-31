@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=26 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_d7yh8"]
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://db8aabndkdi8l" path="res://scenes/deposit_box.tscn" id="7_juqjh"]
 [ext_resource type="PackedScene" uid="uid://cgy7gvt5lw815" path="res://scenes/tree_1_demo.tscn" id="8_2qjcw"]
 [ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://addons/cogito/PackedScenes/Pickups/pickup_flashlight.tscn" id="9_svl00"]
-[ext_resource type="PackedScene" uid="uid://0fj068bj0csc" path="res://addons/cogito/PackedScenes/Pickups/pickup_health_potion.tscn" id="10_50u83"]
 [ext_resource type="PackedScene" uid="uid://dbtcjt5yhl0pj" path="res://scenes/campsite.tscn" id="10_juqjh"]
 [ext_resource type="PackedScene" uid="uid://bab56bf0vqfss" path="res://addons/cogito/PackedScenes/Pickups/pickup_battery.tscn" id="11_d7yh8"]
 [ext_resource type="Texture2D" uid="uid://djomktv4plcid" path="res://Models/Red Tent.jpg" id="11_xwthh"]
+[ext_resource type="Texture2D" uid="uid://dwtl4lf8r8npk" path="res://Models/bark.jpg" id="15_swiq8"]
+[ext_resource type="Texture2D" uid="uid://bc63aih2ftei0" path="res://Models/logs.jpg" id="16_2wyvd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wpnhy"]
 panorama = ExtResource("1_d404f")
@@ -69,6 +70,16 @@ agent_radius = 3.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ovvo"]
 albedo_texture = ExtResource("11_xwthh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kseyc"]
+albedo_texture = ExtResource("15_swiq8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2hrd"]
+albedo_texture = ExtResource("16_2wyvd")
+heightmap_enabled = true
+heightmap_scale = 16.0
+grow_amount = -0.23
+point_size = 0.1
+
 [node name="TheDemoWorld" type="Node3D"]
 script = ExtResource("1_d7yh8")
 
@@ -113,12 +124,6 @@ transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 
 
 [node name="Deposit Box" parent="Map" instance=ExtResource("7_juqjh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.64547, 16.107)
-
-[node name="HealthPotion" parent="Map" instance=ExtResource("10_50u83")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80971, 0.25, 198.8)
-
-[node name="Pickup_Battery" parent="Map" instance=ExtResource("11_d7yh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39116, 0.1, 198.361)
 
 [node name="Pickup_Flashlight" parent="." instance=ExtResource("9_svl00")]
 transform = Transform3D(0.681998, 0, 0.731354, 0, 1, 0, -0.731354, 0, 0.681998, -1.92286, 0.858643, 200.466)
@@ -209,9 +214,20 @@ material_override = SubResource("StandardMaterial3D_5ovvo")
 
 [node name="Log" parent="Campsite/Models" index="1"]
 transform = Transform3D(0.903141, 0, 0, 0, 0.559616, 0, 0, 0, 0.903141, -10.1171, -2.65154, 0.490768)
+material_override = SubResource("StandardMaterial3D_kseyc")
 
 [node name="Base Log" parent="Campsite/Models" index="2"]
 transform = Transform3D(0.818712, 0, 0, 0, 0.412448, 0, 0, 0, 0.818712, -10.1171, -2.8112, 0.490768)
+material_override = SubResource("StandardMaterial3D_u2hrd")
+
+[node name="Pickup_Battery" parent="." instance=ExtResource("11_d7yh8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.20024, 0.895755, 200.123)
+
+[node name="Pickup_Battery2" parent="." instance=ExtResource("11_d7yh8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.43458, 0.895755, 200.536)
+
+[node name="Pickup_Battery3" parent="." instance=ExtResource("11_d7yh8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.07193, 0.895755, 200.859)
 
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!/Detection Area" to="Map/CogitoPlayer" method="_on_detection_area_body_entered"]
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
