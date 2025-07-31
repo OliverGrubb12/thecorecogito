@@ -1,14 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=22 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_nf3v4"]
 [ext_resource type="PackedScene" uid="uid://corr77k5qu3jp" path="res://addons/cogito/CogitoObjects/crystal.tscn" id="3_kk1bx"]
 [ext_resource type="PackedScene" uid="uid://bivmnglewxkd0" path="res://scenes/base_map.tscn" id="4_nf3v4"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_kdkrq"]
 [ext_resource type="PackedScene" uid="uid://drve6uofoake2" path="res://scenes/the_core_reactor.tscn" id="6_svl00"]
+[ext_resource type="Script" uid="uid://btnha2whsheir" path="res://addons/cogito/InventoryPD/cogito_inventory.gd" id="6_tk8df"]
 [ext_resource type="PackedScene" uid="uid://cxem4lc0iyno2" path="res://scenes/enemy_model.tscn" id="7_ei44f"]
 [ext_resource type="PackedScene" uid="uid://db8aabndkdi8l" path="res://scenes/deposit_box.tscn" id="7_juqjh"]
 [ext_resource type="PackedScene" uid="uid://cgy7gvt5lw815" path="res://scenes/tree_1_demo.tscn" id="8_2qjcw"]
 [ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://addons/cogito/PackedScenes/Pickups/pickup_flashlight.tscn" id="9_svl00"]
+[ext_resource type="PackedScene" uid="uid://0fj068bj0csc" path="res://addons/cogito/PackedScenes/Pickups/pickup_health_potion.tscn" id="10_50u83"]
+[ext_resource type="PackedScene" uid="uid://dbtcjt5yhl0pj" path="res://scenes/campsite.tscn" id="10_juqjh"]
+[ext_resource type="PackedScene" uid="uid://bab56bf0vqfss" path="res://addons/cogito/PackedScenes/Pickups/pickup_battery.tscn" id="11_d7yh8"]
+[ext_resource type="Texture2D" uid="uid://djomktv4plcid" path="res://Models/Red Tent.jpg" id="11_xwthh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wpnhy"]
 panorama = ExtResource("1_d404f")
@@ -46,10 +52,21 @@ volumetric_fog_gi_inject = 5.28
 volumetric_fog_length = 240.55
 volumetric_fog_ambient_inject = 0.01
 
+[sub_resource type="Resource" id="Resource_50u83"]
+script = ExtResource("6_tk8df")
+grid = false
+starter_inventory = Array[ExtResource("5_kdkrq")]([])
+inventory_size = Vector2i(4, 4)
+inventory_slots = Array[ExtResource("5_kdkrq")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://btnha2whsheir"
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_svl00"]
 geometry_parsed_geometry_type = 1
 agent_height = 5.0
 agent_radius = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ovvo"]
+albedo_texture = ExtResource("11_xwthh")
 
 [node name="TheDemoWorld" type="Node3D"]
 
@@ -72,7 +89,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5248, 1.19209e-07, 124.12
 speed = 5.0
 
 [node name="CogitoPlayer" parent="Map" instance=ExtResource("2_nf3v4")]
-transform = Transform3D(1.77341, 0, 0, 0, 1.77341, 0, 0, 0, 1.77341, 0, 1.588, 191.807)
+transform = Transform3D(1.02225, 0, -1.44913, 0, 1.77341, 0, 1.44913, 0, 1.02225, -9.27029, 1.588, 209.569)
+inventory_data = SubResource("Resource_50u83")
 
 [node name="Player_HUD" parent="Map/CogitoPlayer" index="16"]
 metadata/_edit_use_anchors_ = true
@@ -94,8 +112,14 @@ transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 
 [node name="Deposit Box" parent="Map" instance=ExtResource("7_juqjh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.64547, 16.107)
 
+[node name="HealthPotion" parent="Map" instance=ExtResource("10_50u83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80971, 0.25, 198.8)
+
+[node name="Pickup_Battery" parent="Map" instance=ExtResource("11_d7yh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39116, 0.1, 198.361)
+
 [node name="Pickup_Flashlight" parent="." instance=ExtResource("9_svl00")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.208626, 180.694)
+transform = Transform3D(0.681998, 0, 0.731354, 0, 1, 0, -0.731354, 0, 0.681998, -1.92286, 0.858643, 200.466)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -127,13 +151,13 @@ transform = Transform3D(2.25781, 0, 0, 0, 2.25781, 0, 0, 0, 2.25781, -70.2194, 4
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.11, 0, 179.871)
 
 [node name="Tree1Demo10" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -17.557, 0, 179.871)
+transform = Transform3D(1.64028, 0, -2.2569, 0, 2.79, 0, 2.2569, 0, 1.64028, -17.557, 0, 179.871)
 
 [node name="Tree1Demo11" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -9.89787, 0, 153.881)
 
 [node name="Tree1Demo12" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 12.2123, 0, 162.807)
+transform = Transform3D(2.24742, 0, 1.65325, 0, 2.79, 0, -1.65325, 0, 2.24742, 12.2123, 0, 162.807)
 
 [node name="Tree1Demo13" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -34.8978, 0, 160.846)
@@ -142,25 +166,25 @@ transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -34.8978, 0, 160.846
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -41.0559, 0, 186.985)
 
 [node name="Tree1Demo15" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -26.3252, 0, 133.697)
+transform = Transform3D(-0.499768, 0, 2.74487, 0, 2.79, 0, -2.74487, 0, -0.499768, -26.3252, 0, 133.697)
 
 [node name="Tree1Demo16" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 1.03618, 0, 136.265)
+transform = Transform3D(1.39403, 0, 2.41677, 0, 2.79, 0, -2.41677, 0, 1.39403, 1.03618, 0, 136.265)
 
 [node name="Tree1Demo17" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 20.4251, 0, 140.021)
+transform = Transform3D(0.606101, 0, 2.72337, 0, 2.79, 0, -2.72337, 0, 0.606101, 20.4251, 0, 140.021)
 
 [node name="Tree1Demo18" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 16.5109, 0, 117.996)
 
 [node name="Tree1Demo19" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -7.74382, 0, 116.91)
+transform = Transform3D(0.704781, 0, 2.69952, 0, 2.79, 0, -2.69952, 0, 0.704781, -7.74382, 0, 116.91)
 
 [node name="Tree1Demo20" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 1.03618, 0, 95.402)
+transform = Transform3D(1.75402, 0, -2.16968, 0, 2.79, 0, 2.16968, 0, 1.75402, 1.03618, 0, 95.402)
 
 [node name="Tree1Demo21" parent="Trees" instance=ExtResource("8_2qjcw")]
-transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -24.3427, 0, 101.424)
+transform = Transform3D(0.0879767, 0, -2.78861, 0, 2.79, 0, 2.78861, 0, 0.0879767, -24.3427, 0, 101.424)
 
 [node name="Tree1Demo22" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -52.3548, 0, 136.265)
@@ -174,6 +198,19 @@ transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, 24.5241, 0, 88.9408)
 [node name="Tree1Demo25" parent="Trees" instance=ExtResource("8_2qjcw")]
 transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -18.5086, 0, 77.9972)
 
+[node name="Campsite" parent="." instance=ExtResource("10_juqjh")]
+transform = Transform3D(0.753403, 0, -0.657559, 0, 1, 0, 0.657559, 0, 0.753403, 6.01087, 3.1945, 206.656)
+
+[node name="Tent" parent="Campsite/Models" index="0"]
+transform = Transform3D(0.217, 0, 0, 0, 4.33, 0, 0, 0, 0.217, 13.1031, -0.0899432, -1.2596)
+material_override = SubResource("StandardMaterial3D_5ovvo")
+
+[node name="Log" parent="Campsite/Models" index="1"]
+transform = Transform3D(0.903141, 0, 0, 0, 0.559616, 0, 0, 0, 0.903141, -10.1171, -2.65154, 0.490768)
+
+[node name="Base Log" parent="Campsite/Models" index="2"]
+transform = Transform3D(0.818712, 0, 0, 0, 0.412448, 0, 0, 0, 0.818712, -10.1171, -2.8112, 0.490768)
+
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!/Detection Area" to="Map/CogitoPlayer" method="_on_detection_area_body_entered"]
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!/EnemyHurtbox" to="Map/CogitoPlayer" method="_on_enemy_hurtbox_body_entered"]
 [connection signal="body_entered" from="Map/Enemies/Enemy!!!2/Detection Area" to="Map/CogitoPlayer" method="_on_detection_area_body_entered"]
@@ -186,3 +223,4 @@ transform = Transform3D(2.79, 0, 0, 0, 2.79, 0, 0, 0, 2.79, -18.5086, 0, 77.9972
 [editable path="Map/Crystals/Crystal"]
 [editable path="Map/Deposit Box"]
 [editable path="Pickup_Flashlight"]
+[editable path="Campsite"]
