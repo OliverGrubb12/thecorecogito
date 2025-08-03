@@ -83,6 +83,9 @@ metadata/_custom_type_script = "uid://b6l8lsrktfd4b"
 decay_in_darkness = false
 
 [node name="StaminaAttribute" parent="." instance=ExtResource("8_kodbk")]
+stamina_regen_speed = 5.0
+value_max = 50.0
+value_start = 50.0
 
 [node name="HealthAttribute" parent="." instance=ExtResource("9_ky5mf")]
 

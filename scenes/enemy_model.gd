@@ -5,7 +5,8 @@ extends CharacterBody3D
 @export var rotation_speed: float = 5.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var detection_area: Area3D = $"Detection Area"
-@onready var animation_player: AnimationPlayer = $Enemy2/AnimationPlayer
+@onready var crouch_detection_area: Area3D = $"Crouch Detection Area"
+@onready var animation_player: AnimationPlayer = $"Enemy Animation Nodes/AnimationPlayer"
 #@onready var enemy_model = $EnemyMesh
 #@onready var animator = $EnemyMesh/AnimationPlayer
 
@@ -20,6 +21,9 @@ func _ready():
 
 	detection_area.body_entered.connect(_on_body_entered)
 	detection_area.body_exited.connect(_on_body_exited)
+	
+	crouch_detection_area.body_entered.connect(_on_body_entered)
+	crouch_detection_area.body_exited.connect(_on_body_exited)
 
 func _physics_process(delta):
 	# Apply gravity

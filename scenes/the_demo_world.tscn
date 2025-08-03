@@ -97,6 +97,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 3.8147e-06)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.379, 1.19209e-07, -3.8147e-06)
 speed = 5.0
 
+[node name="Skeleton3D" parent="Map/Enemies/Enemy!!!/Enemy Animation Nodes/metarig" index="0"]
+bones/0/position = Vector3(-1.24689e-14, 1.0099, -0.0552)
+bones/0/rotation = Quaternion(0.337237, 3.36182e-07, 1.29373e-07, 0.94142)
+bones/1/rotation = Quaternion(1.79599e-08, 0.997919, -0.0644764, 4.32225e-07)
+bones/2/rotation = Quaternion(0.0774642, 1.78421e-09, -1.18354e-08, 0.996995)
+bones/3/rotation = Quaternion(0.00886909, 1.18764e-07, 1.73154e-10, 0.999961)
+bones/4/rotation = Quaternion(6.70325e-09, 0.995787, -0.0917026, -4.35272e-08)
+bones/6/rotation = Quaternion(1.03191e-08, 0.939236, -0.343273, 7.09103e-08)
+bones/8/rotation = Quaternion(0.241, 0.151341, -0.299166, 0.910777)
+bones/9/rotation = Quaternion(0.142182, -0.195535, 0.0918806, 0.965975)
+bones/10/rotation = Quaternion(0.0783869, 0.492932, 0.0828502, 0.86256)
+bones/12/rotation = Quaternion(0.548071, 0.22832, -0.440647, 0.673289)
+bones/13/rotation = Quaternion(0.373959, 0.00710816, -0.609664, 0.698866)
+bones/14/rotation = Quaternion(0.112675, -0.426998, -0.0563445, 0.895434)
+bones/19/rotation = Quaternion(0.772336, -1.57627e-07, 3.80446e-07, 0.635215)
+bones/20/rotation = Quaternion(0.0875415, -9.57024e-08, 1.93836e-08, 0.996161)
+bones/21/rotation = Quaternion(2.01686e-08, 0.849639, -0.527364, 3.71389e-08)
+bones/24/rotation = Quaternion(0.994533, 1.06001e-08, 4.84088e-07, 0.104423)
+bones/25/rotation = Quaternion(0.529207, -7.30759e-08, 4.3445e-08, 0.848493)
+bones/26/rotation = Quaternion(2.01686e-08, 0.849639, -0.527364, 3.71389e-08)
+
 [node name="Enemy!!!2" parent="Map/Enemies" instance=ExtResource("7_ei44f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5248, 1.19209e-07, 124.126)
 speed = 5.0
