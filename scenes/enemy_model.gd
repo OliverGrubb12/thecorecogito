@@ -39,6 +39,7 @@ func _physics_process(delta):
 		target_position = Vector3(player.global_position.x, global_position.y, player.global_position.z)
 		animation_player.play("Local/running")
 		current_speed = speed * 2  # Double speed when chasing
+		
 	else:
 		# Wander behavior: if close to target, pick a new random target
 		var horizontal_pos = Vector3(global_position.x, 0, global_position.z)
@@ -78,10 +79,18 @@ func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
 		is_chasing = true
+		body.chasing_scream.play()
 
 func _on_body_exited(body):
 	if body == player:
 		player = null
 		is_chasing = false
 		_set_random_target()
+		
+
+
+func _on_enemy_hurtbox_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		body.chasing_scream.play()
+		body.show_jumpscare()
 		

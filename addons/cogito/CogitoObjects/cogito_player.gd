@@ -1312,9 +1312,6 @@ func _on_player_state_loaded():
 	pass
 
 
-func _on_enemy_hurtbox_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
-		show_jumpscare()
 
 func show_jumpscare(): 
 	jumpscare_image.visible = true
@@ -1327,7 +1324,5 @@ func show_jumpscare():
 	
 
 
-func _on_detection_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
-		chasing_scream.play()
+
 	
