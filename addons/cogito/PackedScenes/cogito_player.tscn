@@ -180,14 +180,14 @@ _player_interaction_component = NodePath("../PlayerInteractionComponent")
 
 [node name="Death Scream" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("30_ekjhh")
-volume_db = 52.645
-max_db = 1.064
+volume_db = -80.0
+max_db = -0.097
 pitch_scale = 0.75
 
 [node name="Chasing Scream" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("30_ekjhh")
-volume_db = 51.724
-max_db = 1.936
+volume_db = 10.434
+max_db = 0.581
 pitch_scale = 0.32
 
 [connection signal="mouse_movement" from="." to="Body/Neck/Head/Wieldables" method="sway"]

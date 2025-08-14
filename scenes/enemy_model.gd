@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var detection_area: Area3D = $"Detection Area"
 @onready var crouch_detection_area: Area3D = $"Crouch Detection Area"
 @onready var animation_player: AnimationPlayer = $"Enemy Animation Nodes/AnimationPlayer"
+@onready var chasing_scream: AudioStreamPlayer3D = $"Chasing Scream"
 #@onready var enemy_model = $EnemyMesh
 #@onready var animator = $EnemyMesh/AnimationPlayer
 
@@ -79,15 +80,13 @@ func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
 		is_chasing = true
-		body.chasing_scream.play()
+		chasing_scream.play()
 
 func _on_body_exited(body):
 	if body == player:
 		player = null
 		is_chasing = false
 		_set_random_target()
-		
-
 
 func _on_enemy_hurtbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
