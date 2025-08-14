@@ -18,6 +18,8 @@ signal mouse_movement(relative_mouse_movement:Vector2)
 @onready var jumpscare_image = $"Player_HUD/Jumpscare Demo/CanvasLayer/Jumpscare Image"
 @onready var death_scream: AudioStreamPlayer3D = $"Death Scream"
 @onready var chasing_scream: AudioStreamPlayer3D = $"Chasing Scream"
+@export var jumpscare_video: VideoStreamPlayer
+
 
 
 
@@ -1314,15 +1316,34 @@ func _on_player_state_loaded():
 
 
 func show_jumpscare(): 
-	jumpscare_image.visible = true
+
+	jumpscare_video.show()
+	jumpscare_video.play()
 	death_scream.play()
 	await get_tree().create_timer(jumpscare_duration).timeout
-	jumpscare_image.visible = false
+	jumpscare_video.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://addons/cogito/EasyMenus/Scenes/main_menu.tscn")
+	
 	#queue_free()  # Remove area to avoid retriggering
 	
 
+
+#func show_jumpscare():
+#	print("jumpscare_video =", jumpscare_video)
+#	if jumpscare_video == null:
+#		push_error("Jump scare video node not found!")
+#		return
+
+#	jumpscare_video.show()
+#	jumpscare_video.play()
+#	death_scream.play()
+
+#	await get_tree().create_timer(jumpscare_duration).timeout
+	
+#	jumpscare_video.visible = false
+#	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#	get_tree().change_scene_to_file("res://addons/cogito/EasyMenus/Scenes/main_menu.tscn")
 
 
 	

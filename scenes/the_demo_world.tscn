@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://v2oxyxp07e0d"]
+[gd_scene load_steps=27 format=3 uid="uid://v2oxyxp07e0d"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_d7yh8"]
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_d404f"]
@@ -37,6 +37,7 @@ ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.534223, 0.570012, 0.328526, 1)
 fog_light_energy = 0.12
@@ -60,6 +61,10 @@ starter_inventory = Array[ExtResource("5_kdkrq")]([])
 inventory_size = Vector2i(4, 4)
 inventory_slots = Array[ExtResource("5_kdkrq")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://btnha2whsheir"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x37p"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_svl00"]
 geometry_parsed_geometry_type = 1
@@ -107,12 +112,16 @@ transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
 [node name="CollisionShape3D" parent="Map/Enemies/Enemy!!!/Crouch Detection Area" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
 
-[node name="CogitoPlayer" parent="Map" instance=ExtResource("2_nf3v4")]
+[node name="CogitoPlayer" parent="Map" node_paths=PackedStringArray("jumpscare_video") instance=ExtResource("2_nf3v4")]
 transform = Transform3D(1.02225, 0, -1.44913, 0, 1.77341, 0, 1.44913, 0, 1.02225, -9.27029, 1.588, 209.569)
+jumpscare_video = NodePath("Player_HUD/Jumpscare Demo/CanvasLayer/JumpscareVideo")
 inventory_data = SubResource("Resource_50u83")
 
 [node name="Player_HUD" parent="Map/CogitoPlayer" index="16"]
 metadata/_edit_use_anchors_ = true
+
+[node name="FixedStaminaBar" parent="Map/CogitoPlayer/Player_HUD" index="1"]
+bar_stylebox = SubResource("StyleBoxFlat_8x37p")
 
 [node name="PauseMenu" parent="Map/CogitoPlayer" index="17"]
 metadata/_edit_use_anchors_ = true
@@ -539,6 +548,11 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.07193, 0.895755, 200
 
 [editable path="Map/Enemies/Enemy!!!"]
 [editable path="Map/CogitoPlayer"]
+[editable path="Map/CogitoPlayer/Player_HUD"]
+[editable path="Map/CogitoPlayer/Player_HUD/FixedStaminaBar"]
+[editable path="Map/CogitoPlayer/Player_HUD/InventoryInterface/QuickSlots/CogitoQuickslotContainer1"]
+[editable path="Map/CogitoPlayer/Player_HUD/InventoryInterface/QuickSlots/CogitoQuickslotContainer3"]
+[editable path="Map/CogitoPlayer/Player_HUD/InventoryInterface/QuickSlots/CogitoQuickslotContainer4"]
 [editable path="Map/Crystals/Crystal"]
 [editable path="Map/Deposit Box"]
 [editable path="Pickup_Flashlight"]

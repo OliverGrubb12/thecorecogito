@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2pjjkl51wixu"]
+
+[ext_resource type="VideoStream" uid="uid://bqnobwfl7ec61" path="res://Animations/death_animation_final_wrong_format.ogv" id="1_equyu"]
+
+[node name="testing jumpscare" type="Node3D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("1_equyu")
+autoplay = true
+expand = true
+buffering_msec = 1000
