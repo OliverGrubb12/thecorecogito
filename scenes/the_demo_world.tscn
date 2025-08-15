@@ -123,6 +123,111 @@ max_db = 0.194
 pitch_scale = 0.29
 max_distance = 1162.74
 
+[node name="Enemy!!!2" parent="NavigationRegion3D/Map/Enemies" instance=ExtResource("7_ei44f")]
+transform = Transform3D(-0.850279, 0, -0.526333, 0, 1, 0, 0.526333, 0, -0.850279, -37.2882, 0, 100.62)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800018, 1.62964, -0.00933838)
+
+[node name="Detection Area" parent="NavigationRegion3D/Map/Enemies/Enemy!!!2" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!2/Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!2/Crouch Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
+
+[node name="Chasing Scream" parent="NavigationRegion3D/Map/Enemies/Enemy!!!2" index="7"]
+volume_db = -0.921
+max_db = 0.194
+pitch_scale = 0.29
+max_distance = 1162.74
+
+[node name="Enemy!!!3" parent="NavigationRegion3D/Map/Enemies" instance=ExtResource("7_ei44f")]
+transform = Transform3D(-0.850279, 0, -0.526333, 0, 1, 0, 0.526333, 0, -0.850279, -45.0727, 0, 32.528)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!3" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800018, 1.62964, -0.00933838)
+
+[node name="Detection Area" parent="NavigationRegion3D/Map/Enemies/Enemy!!!3" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!3/Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!3/Crouch Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
+
+[node name="Chasing Scream" parent="NavigationRegion3D/Map/Enemies/Enemy!!!3" index="7"]
+volume_db = -0.921
+max_db = 0.194
+pitch_scale = 0.29
+max_distance = 1162.74
+
+[node name="Enemy!!!4" parent="NavigationRegion3D/Map/Enemies" instance=ExtResource("7_ei44f")]
+transform = Transform3D(-0.850279, 0, -0.526333, 0, 1, 0, 0.526333, 0, -0.850279, 77.0259, 0, 24.5391)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!4" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800018, 1.62964, -0.00933838)
+
+[node name="Detection Area" parent="NavigationRegion3D/Map/Enemies/Enemy!!!4" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!4/Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!4/Crouch Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
+
+[node name="Chasing Scream" parent="NavigationRegion3D/Map/Enemies/Enemy!!!4" index="7"]
+volume_db = -0.921
+max_db = 0.194
+pitch_scale = 0.29
+max_distance = 1162.74
+
+[node name="Enemy!!!5" parent="NavigationRegion3D/Map/Enemies" instance=ExtResource("7_ei44f")]
+transform = Transform3D(-0.850279, 0, -0.526333, 0, 1, 0, 0.526333, 0, -0.850279, 15.3314, 0, -45.2902)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!5" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800018, 1.62964, -0.00933838)
+
+[node name="Detection Area" parent="NavigationRegion3D/Map/Enemies/Enemy!!!5" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!5/Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!5/Crouch Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
+
+[node name="Chasing Scream" parent="NavigationRegion3D/Map/Enemies/Enemy!!!5" index="7"]
+volume_db = -0.921
+max_db = 0.194
+pitch_scale = 0.29
+max_distance = 1162.74
+
+[node name="Enemy!!!6" parent="NavigationRegion3D/Map/Enemies" instance=ExtResource("7_ei44f")]
+transform = Transform3D(-0.850279, 0, -0.526333, 0, 1, 0, 0.526333, 0, -0.850279, -15.4412, 0, -113.881)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!6" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800018, 1.62964, -0.00933838)
+
+[node name="Detection Area" parent="NavigationRegion3D/Map/Enemies/Enemy!!!6" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!6/Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 2.2599, 0)
+
+[node name="CollisionShape3D" parent="NavigationRegion3D/Map/Enemies/Enemy!!!6/Crouch Detection Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55036, 0)
+
+[node name="Chasing Scream" parent="NavigationRegion3D/Map/Enemies/Enemy!!!6" index="7"]
+volume_db = -0.921
+max_db = 0.194
+pitch_scale = 0.29
+max_distance = 1162.74
+
 [node name="NavAgent" type="NavigationAgent3D" parent="NavigationRegion3D/Map/Enemies"]
 path_height_offset = -1.0
 path_max_distance = 31.21
@@ -571,9 +676,19 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.07193, 0.895755, 200
 [node name="Rocks" type="Node3D" parent="."]
 
 [connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!2/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!2" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!3/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!3" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!4/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!4" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!5/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!5" method="_on_enemy_hurtbox_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Map/Enemies/Enemy!!!6/EnemyHurtbox" to="NavigationRegion3D/Map/Enemies/Enemy!!!6" method="_on_enemy_hurtbox_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/Map/Deposit Box/core bin/Cube_001/Deposit Area" to="NavigationRegion3D/Map/Crystals/Crystal" method="_on_deposit_area_body_entered"]
 
 [editable path="NavigationRegion3D/Map/Enemies/Enemy!!!"]
+[editable path="NavigationRegion3D/Map/Enemies/Enemy!!!2"]
+[editable path="NavigationRegion3D/Map/Enemies/Enemy!!!3"]
+[editable path="NavigationRegion3D/Map/Enemies/Enemy!!!4"]
+[editable path="NavigationRegion3D/Map/Enemies/Enemy!!!5"]
+[editable path="NavigationRegion3D/Map/Enemies/Enemy!!!6"]
 [editable path="NavigationRegion3D/Map/CogitoPlayer"]
 [editable path="NavigationRegion3D/Map/CogitoPlayer/Player_HUD"]
 [editable path="NavigationRegion3D/Map/CogitoPlayer/Player_HUD/FixedStaminaBar"]

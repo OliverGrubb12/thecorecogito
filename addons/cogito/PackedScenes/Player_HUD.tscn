@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://bjvjod3kt0kyr" path="res://addons/cogito/Scripts/ui_wieldable_hud.gd" id="8_2nbvg"]
 [ext_resource type="AudioStream" uid="uid://bnqnuewmntcyp" path="res://addons/cogito/Assets/Audio/Kenney/UiAudio/error_008.ogg" id="8_bxpra"]
 [ext_resource type="Texture2D" uid="uid://78js4558o61m" path="res://addons/cogito/Assets/Graphics/ItemIcons/Cogito_Pistol.png" id="9_1l2nt"]
-[ext_resource type="VideoStream" uid="uid://bqnobwfl7ec61" path="res://Animations/death_animation_final_wrong_format.ogv" id="9_eu3l5"]
+[ext_resource type="VideoStream" uid="uid://db8b3nh3y2ib4" path="res://Animations/death_animation_final.ogv" id="9_eu3l5"]
 [ext_resource type="Texture2D" uid="uid://cxvxq8hy53ih5" path="res://addons/cogito/Assets/Graphics/ItemIcons/Cogito_FoamBullets.png" id="10_bnneb"]
 [ext_resource type="PackedScene" uid="uid://btf6bmlgtfk1b" path="res://addons/cogito/Components/DynamicInputIcon.tscn" id="12_jgxar"]
 [ext_resource type="Script" uid="uid://by3n6q1edxunf" path="res://addons/cogito/QuestSystem/Components/ui_quest_hud.gd" id="15_kn51k"]
