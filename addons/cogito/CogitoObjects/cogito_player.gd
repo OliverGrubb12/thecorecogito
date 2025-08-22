@@ -1316,7 +1316,6 @@ func _on_player_state_loaded():
 
 
 func show_jumpscare(): 
-
 	jumpscare_video.show()
 	jumpscare_video.play()
 	death_scream.play()
