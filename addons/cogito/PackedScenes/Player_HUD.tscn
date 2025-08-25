@@ -136,10 +136,10 @@ time_before_fadeout = 1.5
 bar_stylebox = SubResource("StyleBoxFlat_8x37p")
 
 [node name="HBoxContainer" parent="FixedStaminaBar" index="0"]
-offset_left = -513.0
-offset_top = -520.0
-offset_right = -310.0
-offset_bottom = -495.0
+offset_left = -806.0
+offset_top = -854.0
+offset_right = -603.0
+offset_bottom = -829.0
 
 [node name="AttributeBar" parent="FixedStaminaBar/HBoxContainer" index="1"]
 custom_minimum_size = Vector2(130, 5)
@@ -217,7 +217,6 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="WieldableHud" type="PanelContainer" parent="MarginContainer_BottomUI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 2
@@ -600,6 +599,10 @@ anchor_left = 0.683594
 anchor_top = 0.0138889
 anchor_right = 0.683594
 anchor_bottom = 0.0138889
+offset_left = 181.329
+offset_top = -1.23978e-05
+offset_right = 181.329
+offset_bottom = -1.23978e-05
 pivot_offset = Vector2(400, 0)
 theme = ExtResource("5_j6s1a")
 script = ExtResource("15_kn51k")
