@@ -19,12 +19,15 @@
 [ext_resource type="AudioStream" uid="uid://dhyd74oxs32dx" path="res://addons/cogito/Assets/Audio/calming-rain-257596.mp3" id="16_fs6vn"]
 
 [sub_resource type="SystemFont" id="SystemFont_3wqra"]
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n66hi"]
 
 [sub_resource type="SystemFont" id="SystemFont_n8np6"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_w0p5p"]
+subpixel_positioning = 0
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("first_focus_button")]
 layout_mode = 3

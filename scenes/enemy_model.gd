@@ -33,8 +33,11 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 
-	var current_speed = speed
 
+	var current_speed = speed
+	if speed == 0:
+		stop_hitting_objects()
+	
 	if is_chasing and player and player.is_inside_tree():
 		# Chase player on XZ plane only
 		target_position = Vector3(player.global_position.x, global_position.y, player.global_position.z)
@@ -93,3 +96,6 @@ func _on_enemy_hurtbox_body_entered(body: Node3D) -> void:
 		body.chasing_scream.play()
 		body.show_jumpscare()
 		
+
+func stop_hitting_objects():
+	_set_random_target()

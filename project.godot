@@ -26,6 +26,7 @@ CogitoSceneManager="*res://addons/cogito/SceneManagement/cogito_scene_manager.gd
 CogitoQuestManager="*res://addons/cogito/QuestSystem/cogito_quest_manager.gd"
 MenuTemplateManager="*res://addons/cogito/EasyMenus/Nodes/menu_template_manager.tscn"
 InputHelper="*res://addons/input_helper/input_helper.gd"
+SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 
 [display]
 
@@ -42,7 +43,7 @@ export/convert_text_resources_to_binary=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/cogito/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/cogito/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg")
 
 [file_customization]
 
@@ -232,4 +233,44 @@ anti_aliasing/quality/msaa_3d=1
 viewmodel_fov={
 "type": "float",
 "value": 75.0
+}
+sgt_legacy_renderer={
+"type": "int",
+"value": 0
+}
+sgt_player_position={
+"type": "vec3",
+"value": Vector3(1e+06, 1e+06, 1e+06)
+}
+sgt_player_mov={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+sgt_normal_displacement={
+"type": "sampler2D",
+"value": "res://addons/simplegrasstextured/images/normal.png"
+}
+sgt_motion_texture={
+"type": "sampler2D",
+"value": "res://addons/simplegrasstextured/images/motion.png"
+}
+sgt_wind_direction={
+"type": "vec3",
+"value": Vector3(1, 0, 0)
+}
+sgt_wind_movement={
+"type": "vec3",
+"value": Vector2(0, 0)
+}
+sgt_wind_strength={
+"type": "float",
+"value": 0.15
+}
+sgt_wind_turbulence={
+"type": "float",
+"value": 1.0
+}
+sgt_wind_pattern={
+"type": "sampler2D",
+"value": "res://addons/simplegrasstextured/images/wind_pattern.png"
 }
