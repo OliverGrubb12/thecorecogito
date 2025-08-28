@@ -14,6 +14,13 @@ var interaction_nodes : Array[Node]
 var cogito_properties : CogitoProperties = null
 var properties : int
 
+signal deposited
+
+func deposit():
+	# Emit signal for HUD
+	emit_signal("deposited")
+	# Remove the crystal
+	queue_free()
 
 func _ready():
 	self.add_to_group("interactable")

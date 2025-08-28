@@ -12,6 +12,27 @@ extends Node
 @export_range(-80.0, 24.0) var music_max_volume_db : float = -6.0
 
 
+@onready var hud: CogitoPlayerHudManager = $NavigationRegion3D/Map/CogitoPlayer/Player_HUD
+@onready var crystal_scene: PackedScene = preload("res://addons/cogito/CogitoObjects/crystal.tscn")
+
+
+func _ready() -> void:
+	spawn_crystal()
+
+func spawn_crystal() -> void:
+	var crystal = crystal_scene.instantiate()
+	add_child(crystal)
+
+	# Set position safely for RigidBody3D
+	crystal.global_transform.origin = Vector3(0, 1, 0)	# adjust X, Y, Z
+
+	# Add to group for easy detection
+	crystal.add_to_group("crystals")
+
+	# Connect signal to HUD
+	crystal.deposited.connect(hud._on_crystal_deposited)
+
+
 func move_player_to_connector(connector_name:String):
 	for node in connectors:
 		if node.get_name() == connector_name:

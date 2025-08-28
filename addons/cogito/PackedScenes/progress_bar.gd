@@ -2,10 +2,12 @@ extends ProgressBar
 
 @onready var progress_bar: ProgressBar = $"."
 @onready var decrease_timer: Timer = $"../Decrease Timer"
+@export var decrease_speed: float = 0.33 # Units per second
 
-func _ready() -> void:
-	progress_bar.max_value = 100
-	progress_bar.min_value = 0
-	
-	if decrease_timer.timeout:
-		progress_bar.value - 10
+func _process(delta: float) -> void:
+	if value > min_value:
+		value -= decrease_speed * delta
+		value = max(value, min_value) # Ensure value doesn't go below min_value
+
+func _on_crystal_deposited() -> void:
+	progress_bar.value = 100 
