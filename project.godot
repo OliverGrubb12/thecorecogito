@@ -15,8 +15,8 @@ run/main_scene="res://addons/cogito/DemoScenes/COGITO_0_MainMenu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=120
 boot_splash/fullsize=false
-boot_splash/image="res://addons/cogito/COGITO_Card_2025.png"
 config/icon="res://addons/cogito/COGITO_icon.png"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 

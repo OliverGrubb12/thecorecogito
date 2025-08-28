@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/horror-background-tension-254885.mp3-2bf62bcd
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

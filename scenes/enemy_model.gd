@@ -93,7 +93,8 @@ func _on_body_exited(body):
 
 func _on_enemy_hurtbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		body.chasing_scream.play()
+		chasing_scream.stop()
+		#body.chasing_scream.play()
 		body.show_jumpscare()
 		
 
