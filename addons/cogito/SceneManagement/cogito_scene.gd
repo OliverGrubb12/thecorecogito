@@ -24,13 +24,10 @@ func spawn_crystal() -> void:
 	add_child(crystal)
 
 	# Set position safely for RigidBody3D
-	crystal.global_transform.origin = Vector3(0, 1, 0)	# adjust X, Y, Z
+	crystal.global_transform.origin = Vector3(-6, 2, 215)	# adjust X, Y, Z
 
 	# Add to group for easy detection
 	crystal.add_to_group("crystals")
-
-	# Connect signal to HUD
-	crystal.deposited.connect(hud._on_crystal_deposited)
 
 
 func move_player_to_connector(connector_name:String):

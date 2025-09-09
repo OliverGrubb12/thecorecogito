@@ -680,6 +680,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_j4em4")
 value = 100.0
 show_percentage = false
 script = ExtResource("28_vmpwe")
+decrease_speed = null
 metadata/_edit_use_anchors_ = true
 
 [node name="Decrease Timer" type="Timer" parent="."]

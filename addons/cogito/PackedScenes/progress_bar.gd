@@ -8,6 +8,11 @@ func _process(delta: float) -> void:
 	if value > min_value:
 		value -= decrease_speed * delta
 		value = max(value, min_value) # Ensure value doesn't go below min_value
+		crystal.deposit_crystal.connect(_on_deposit_crystal)
 
-func _on_crystal_deposited() -> void:
-	progress_bar.value = 100 
+func _on_deposit_crystal():
+	if progress_bar.value <= 80:
+		progress_bar.value + 20
+	else:
+		progress_bar.value = 100
+		

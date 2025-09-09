@@ -1,6 +1,8 @@
 extends Node3D
 @onready var deposit_area: Area3D = $"core bin/Cube_001/Deposit Area"
 
+signal deposit_crytsal
+
 #func _ready():
 #	# Correctly connect using a callable
 #	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -17,7 +19,12 @@ func _on_deposit_area_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Crystal"):
 		var crystal_root = area.get_owner()
 		if crystal_root:
+			emit_signal("deposit_crytsal")
 			crystal_root.queue_free()
+			
+			
+			
+			
 #	if area.is_in_group("Crystal"):
 #		var crystal_root: Node = area.get_owner()
 #		if crystal_root:
