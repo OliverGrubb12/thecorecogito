@@ -19,7 +19,7 @@ func _on_deposit_area_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Crystal"):
 		var crystal_root = area.get_owner()
 		if crystal_root:
-			emit_signal("deposit_crytsal")
+			deposit_crytsal.emit()
 			crystal_root.queue_free()
 			
 			

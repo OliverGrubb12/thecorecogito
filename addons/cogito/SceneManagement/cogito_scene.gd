@@ -27,7 +27,7 @@ func spawn_crystal() -> void:
 	crystal.global_transform.origin = Vector3(-6, 2, 215)	# adjust X, Y, Z
 
 	# Add to group for easy detection
-	crystal.add_to_group("crystals")
+	crystal.add_to_group("Crystal")
 
 
 func move_player_to_connector(connector_name:String):
