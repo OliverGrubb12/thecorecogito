@@ -1,25 +1,51 @@
 extends ProgressBar
 
-@onready var progress_bar: ProgressBar = $"."
-@onready var decrease_timer: Timer = $"../Decrease Timer"
-@export var decrease_speed: float = 0.33 # Units per second
 
-func _process(delta: float) -> void:
-	if progress_bar.value > min_value:
-		progress_bar.value -= decrease_speed * delta
-		progress_bar.value = max(value, min_value) # Ensure value doesn't go below min_value
-		#crystal.deposit_crystal.connect(_on_deposit_crystal)
+@onready var decrease_timer: Timer = $Timer
+@export var decrease_speed: float = 0.1 # Units per second
 
-func _on_deposit_crystal():
-	if progress_bar.value <= 80:
-		progress_bar.value + 20
-	else:
-		progress_bar.value = 100
+
+func _ready():
+	decrease_timer.timeout.connect(decrease_time)
+
+func _process(delta):
+	$Label.text = str(value)	
+	
+func decrease_time() -> void:
+	
+	if value > min_value:
 		
+		value -= decrease_speed
+		value = max(value, min_value) # Ensure value doesn't go below min_value
+		#crystal.deposit_crystal.connect(_on_deposit_crystal)
+		
+	if value == 0:
+		get_tree().change_scene_to_file("res://addons/cogito/DemoScenes/COGITO_0_MainMenu.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	
+
+
+
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
-	if progress_bar.value <= 80:
-		progress_bar.value + 20
+	print("Deposit")
+	print(value)
+	if value <= 80:
+		print("add time")
+		value += 20
 	else:
-		progress_bar.value = 100
+		value = 100
+
+
+func _on_deposit_area_body_entered(body: Node3D) -> void:
+	print(body.name)
+	print(value)
+	if body.is_in_group("Crystal"):
+		print("setting time")
+		if value <= 80:
+			value += 20
+		else:
+			value = 100
+		body.queue_free()

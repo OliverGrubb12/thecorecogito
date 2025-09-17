@@ -52,7 +52,7 @@ var interaction_texture : Texture2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 func _on_crystal_deposited() -> void:
-	progress_bar.value = 100
+	#progress_bar.value = 100
 	print("HUD updated: Crystal deposited!")
 
 

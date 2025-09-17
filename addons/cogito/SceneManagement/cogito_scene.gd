@@ -24,7 +24,7 @@ func spawn_crystal() -> void:
 	add_child(crystal)
 
 	# Set position safely for RigidBody3D
-	crystal.global_transform.origin = Vector3(-6, 2, 215)	# adjust X, Y, Z
+	crystal.global_transform.origin = Vector3(-3, 4, 80)	# adjust X, Y, Z
 
 	# Add to group for easy detection
 	crystal.add_to_group("Crystal")
